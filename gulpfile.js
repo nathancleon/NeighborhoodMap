@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+//Don't need babel for this project, replace later with minify js & css.
 const babel = require('gulp-babel');
 const browserSync = require('browser-sync').create();
 
