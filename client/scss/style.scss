@@ -1,0 +1,12 @@
+#wrapper {
+  position: relative;
+}
+
+#.search {
+  position: absolute;
+  margin: 0;
+  top: 10px;
+  left: 10px;
+  z-index: 99;
+  border-radius: 1.5px;
+}
