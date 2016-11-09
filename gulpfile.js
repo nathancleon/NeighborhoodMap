@@ -5,7 +5,7 @@ const babel = require('gulp-babel');
 const browserSync = require('browser-sync').create();
 
 gulp.task('styles', () => {
-  const files = './client/scss/splash.scss';
+  const files = './client/css/style.css';
 
   return gulp.src(files)
     .pipe(sass({
@@ -30,7 +30,7 @@ gulp.task('watch', () => {
   });
 
   gulp.watch('./client/js/**/*.js', ['scripts']);
-  gulp.watch('./client/scss/**/*.scss', ['styles']);
+  gulp.watch('./client/css/*.css', ['styles']);
   gulp.watch('*.html').on('change', browserSync.reload);
 });
 

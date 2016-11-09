@@ -197,9 +197,6 @@
           success: function(data) {
             console.log(data);
 
-            // @TODO: Finish adding foursquare data to map markers
-            // item.marker.title = data.response.venues[0].name;
-            // // @TODO: Change content below to populate photos from FourSquare api rather than calculating the distance or checkin count
             location.marker.content = '<img src=' + data.response.photos.items[0].prefix + '300x300' + data.response.photos.items[0].suffix + '>';
           }
         });
@@ -211,6 +208,10 @@
      *
      *  @param marker      [@TODO] [REQUIRED]
      *  @param infoWindow  [@TODO] [REQUIRED]
+     *  @TODO: add click event so when user clicks outside
+     *         of infowindow the window closes
+     *  @TODO: when user clicks marker, make the map center
+     *         on the marker's location
      */
     self.populateInfoWindow = function (marker, infoWindow) {
       if (infoWindow.marker !== marker) {
@@ -296,7 +297,7 @@ window.initMap = function () {
   map = new google.maps.Map(
     document.querySelector('.js-map'), {
     zoom: 12,
-    center: { lat: 30.2672 , lng: -97.7431 }
+    center: { lat: 30.2849 , lng: -97.7341 }
   });
 
   ko.applyBindings(new ViewModel());
