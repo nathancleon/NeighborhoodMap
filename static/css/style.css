@@ -42,17 +42,20 @@ html, body {
   padding-bottom: 25px;
   background-color: white; }
 
-#iw-container .iw-title {
+.iw-title {
   font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 22px;
-  font-weight: 400;
-  padding: 10px;
+  text-align: center;
+  font-size: 1.825em;
+  font-weight: 600;
+  margin: 0 2.5%;
+  padding: 1em 0 1em 0;
+  width: 300px;
   background-color: #48b5e9;
-  color: white;
-  margin: 1px;
-  border-radius: 2px 2px 0 0;
-  /* In accordance with the rounding of the default infowindow corners. */ }
+  color: white; }
 
-#iw-container img {
-  padding-left: 5%;
-  padding-bottom: 5%; }
+.iw-container img {
+  margin: 0 auto;
+  padding-left: 2.5%; }
+
+.iw-container:parent {
+  display: none; }

@@ -25,8 +25,8 @@
     {
       name: 'Mozarts Coffee Roasters',
       latlng: {
-        lat: 30.2954206,
-        lng: -97.7864584
+        lat: 30.2952429,
+        lng: -97.7843707
       },
       address: '3825 Lake Austin Blvd, Austin, TX 78703',
       id: '43936bd5f964a520752b1fe3'
@@ -34,8 +34,8 @@
     {
       name: 'Jo\'s Coffee',
       latlng: {
-        lat: 30.2512945,
-        lng: -97.7966038
+        lat: 30.2513583,
+        lng: -97.7562771
       },
       address: '1300 S Congress Ave, Austin, TX 78704',
       id: '40b68100f964a52078001fe3'
@@ -52,8 +52,8 @@
     {
       name: 'The Coffee Bean & Tea Leaf',
       latlng: {
-        lat: 30.3307689,
-        lng: -97.8019279
+        lat: 30.2998368,
+        lng: -97.7240902
       },
       address: 'Hancock Center, 1000 E 41st St #100, Austin, TX 78751',
       id: '4b22a1c0f964a5209f4a24e3'
@@ -165,7 +165,7 @@
         marker = new google.maps.Marker({
           map: map,
           position: self.locationList()[i].latlng,
-          animation: null,
+          animation: google.maps.Animation.DROP,
           title: locations[i].name,
           content: '',
           draggable: false,
@@ -221,9 +221,12 @@
     self.populateInfoWindow = function (marker, infoWindow) {
       if (infoWindow.marker !== marker) {
         infoWindow.marker = marker;
-        infoWindow.setContent('<div id="iw-container"><h4 class="iw-title">' + marker.title + '</h4>' + marker.content + '</div>');
+        infoWindow.setContent('<div class="iw-container"><div class="iw-content"><h4 class="iw-title">' + marker.title + '</h4>' + marker.content + '</div></div>');
         infoWindow.open(map, marker);
 
+        infoWindow.addListener('mouseout', function () {
+          infoWindow.marker = null;
+        });
         infoWindow.addListener('closeclick', function () {
           infoWindow.marker = null;
         });
@@ -262,7 +265,7 @@
       location.marker.setAnimation(google.maps.Animation.BOUNCE);
       setTimeout (function () {
         location.marker.setAnimation(null);
-      }, 2000);
+      }, 1000);
     };
 
     /**
@@ -298,7 +301,7 @@ window.initMap = function () {
   // init the map
   map = new google.maps.Map(
     document.querySelector('.js-map'), {
-    zoom: 12,
+    zoom: 13,
     center: { lat: 30.2849 , lng: -97.7341 }
   });
 
