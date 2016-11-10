@@ -29,7 +29,7 @@ gulp.task('watch', () => {
     proxy: 'localhost:3000'
   });
 
-  gulp.watch('./client/js/**/*.js', ['scripts']);
+  gulp.watch('./client/js/*.js', ['scripts']);
   gulp.watch('./client/css/*.css', ['styles']);
   gulp.watch('*.html').on('change', browserSync.reload);
 });

@@ -23,8 +23,13 @@ html, body {
     }
 
 .search {
-  padding-top: 20px;
-  padding-left: 20px;
+  padding-top: 1em;
+  padding-left: 0.5em;
+}
+
+.list {
+  padding-left: 0.5em;
+  list-style: none;
 }
 
 .heading {
@@ -43,9 +48,18 @@ html, body {
     background-color: white;
     }
 
-.input{
-        width: 225px;
-        height: 25px;
-        border-radius: 6px;
-        border: 1px solid #19A7E2;
+#iw-container  .iw-title {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  padding: 10px;
+  background-color: #48b5e9;
+  color: white;
+  margin: 1px;
+  border-radius: 2px 2px 0 0; /* In accordance with the rounding of the default infowindow corners. */
+}
+
+#iw-container img {
+  padding-left: 5%;
+  padding-bottom: 5%;
 }

@@ -178,8 +178,13 @@
         marker.addListener('click', function() {
           self.populateInfoWindow(this, largeInfoWindow);
         });
+        // triggers bounce animation
         marker.addListener('click', function() {
           self.toggleBounce(this);
+        });
+        // center the map on the marker's location
+        marker.addListener('click', function() {
+          map.setCenter(this.position);
         });
         // associate marker with location
         self.locationList()[i].marker = marker;
@@ -216,7 +221,7 @@
     self.populateInfoWindow = function (marker, infoWindow) {
       if (infoWindow.marker !== marker) {
         infoWindow.marker = marker;
-        infoWindow.setContent('<div><h4>' + marker.title + '</h4>' + marker.content + '</div>');
+        infoWindow.setContent('<div id="iw-container"><h4 class="iw-title">' + marker.title + '</h4>' + marker.content + '</div>');
         infoWindow.open(map, marker);
 
         infoWindow.addListener('closeclick', function () {
@@ -258,9 +263,6 @@
       setTimeout (function () {
         location.marker.setAnimation(null);
       }, 2000);
-
-      // center the map on the marker's location
-      map.setCenter(location.marker.position);
     };
 
     /**
