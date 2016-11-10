@@ -126,11 +126,10 @@
    *  @param data [OBJECT] [REQUIRED]
    */
   Location = function (data) {
-    var self = this;
 
-    self.name = data.name;
-    self.latlng = data.latlng;
-    self.id = data.id;
+    this.name = data.name;
+    this.latlng = data.latlng;
+    this.id = data.id;
   };
 
   /**
@@ -159,6 +158,10 @@
       // setup map marker tooltip/info window
       largeInfoWindow = new google.maps.InfoWindow();
 
+      google.maps.event.addListener(map, 'click', function () {
+        largeInfoWindow.close();
+      });
+
       // make map markers
       for (i = 0; i < self.locationList().length; i++) {
         // @TODO: Link to documentation for Marker
@@ -176,16 +179,14 @@
         self.markers().push(marker);
         // add listeners the google way
         marker.addListener('click', function() {
+          // triggers bounce animation
+          self.toggleBounce(this);
+          // center the map on the marker's location
+          map.setCenter(this.position);
+          // set the content for the info window and open it
           self.populateInfoWindow(this, largeInfoWindow);
         });
-        // triggers bounce animation
-        marker.addListener('click', function() {
-          self.toggleBounce(this);
-        });
-        // center the map on the marker's location
-        marker.addListener('click', function() {
-          map.setCenter(this.position);
-        });
+
         // associate marker with location
         self.locationList()[i].marker = marker;
       };
@@ -223,13 +224,6 @@
         infoWindow.marker = marker;
         infoWindow.setContent('<div class="iw-container"><div class="iw-content"><h4 class="iw-title">' + marker.title + '</h4>' + marker.content + '</div></div>');
         infoWindow.open(map, marker);
-
-        infoWindow.addListener('mouseout', function () {
-          infoWindow.marker = null;
-        });
-        infoWindow.addListener('closeclick', function () {
-          infoWindow.marker = null;
-        });
       }
     };
 
@@ -262,10 +256,7 @@
      *  @param location [OBJECT] [REQUIRED]
      */
     self.setMarker = function (location) {
-      location.marker.setAnimation(google.maps.Animation.BOUNCE);
-      setTimeout (function () {
-        location.marker.setAnimation(null);
-      }, 1000);
+      google.maps.event.trigger(location.marker, 'click');
     };
 
     /**

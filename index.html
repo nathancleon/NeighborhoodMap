@@ -7,7 +7,7 @@
       <div id="map" class="js-map"></div>
       <main>
         <header class="heading">
-          <h1>Favorite Coffee Shops in Austin</h1>
+          <h1 class="heading-text">Favorite Coffee Shops in Austin</h1>
         </header>
         <div class="menu">
           <form class="search">
@@ -18,7 +18,7 @@
                    data-bind="value: query, valueUpdate: 'keyup'">
           </form>
           <ul data-bind="foreach: filteredPlaces" class="list">
-            <li class="name" data-bind="text:name, click: $parent.setMarker,$parent.toggleBounce"></li>
+            <li class="name" data-bind="text:name, click: $parent.setMarker"></li>
           </ul>
         </div>
       </main>
