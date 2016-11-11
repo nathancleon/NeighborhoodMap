@@ -9,14 +9,33 @@ html, body {
   height: 100%;
   overflow: hidden; }
 
+.heading {
+  padding-left: 0.25em;
+  height: 15em;
+  position: absolute;
+  overflow: hidden;
+  top: -2.25em;
+  z-index: 3; }
+
+.heading-img {
+  width: 18em; }
+
+.nav-icon {
+  position: fixed;
+  top: -0.5em;
+  left: 14em;
+  width: 3.25em;
+  padding: 1em;
+  z-index: 4; }
+
 .menu {
-  width: 16em;
+  width: 18.825rem;
   position: absolute;
   height: 100%;
   overflow: hidden;
   top: 0em;
   left: 0em;
-  padding-top: 8em;
+  padding-top: 13em;
   background-color: #48b5e9;
   z-index: 2; }
 
@@ -44,28 +63,13 @@ html, body {
   list-style: none; }
 
 .name {
+  font-size: 1.15em;
   color: #fff;
   line-height: 2em; }
 
 .name:hover {
-  color: #d8d8d8; }
-
-.heading {
-  width: 100%;
-  margin-right: 40%;
-  padding-left: 1em;
-  height: 7em;
-  position: absolute;
-  overflow: hidden;
-  top: 0px;
-  left: 0px;
-  background: rgba(72, 181, 233, 0.5);
-  z-index: 3; }
-
-.heading-text {
-  text-align: left;
-  font-size: 2em;
-  color: #fff; }
+  color: #d8d8d8;
+  text-decoration: underline; }
 
 .iw-container {
   width: auto; }
@@ -84,6 +88,3 @@ html, body {
 .iw-container img {
   margin: 0 auto;
   padding-left: 2.5%; }
-
-.iw-container:parent {
-  display: none; }
