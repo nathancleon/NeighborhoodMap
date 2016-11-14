@@ -20,14 +20,6 @@ html, body {
 .heading-img {
   width: 18em; }
 
-.nav-icon {
-  position: fixed;
-  top: -0.5em;
-  left: 14em;
-  width: 3.25em;
-  padding: 1em;
-  z-index: 4; }
-
 .menu {
   width: 18.825rem;
   position: absolute;
