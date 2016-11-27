@@ -93,3 +93,9 @@ html, body {
   margin: 0 auto;
   padding-left: 2.5%;
 }
+
+@media only screen and (max-width: 970px) {
+  .heading, .nav, .menu {
+    display: none;
+  }
+}

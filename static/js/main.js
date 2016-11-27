@@ -274,7 +274,7 @@
     // init the map
     map = new google.maps.Map(document.querySelector('.js-map'), {
       zoom: 13,
-      center: { lat: 30.2849, lng: -97.7341 }
+      center: { lat: 30.308869, lng: -97.756446 }
     });
 
     ko.applyBindings(new ViewModel());
