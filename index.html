@@ -6,22 +6,25 @@
     <body>
       <div id="map" class="js-map"></div>
       <main>
-        <header class="heading">
-          <img class="heading-img" src="./client/img/coffee-shop-sign.svg" onerror="./client/img/noun_27504.svg" />
-        </header>
         <div class="nav">
+          <span class="heading">
+            <img class="heading-img" src="./client/img/coffee-shop-sign.svg" onerror="./client/img/noun_27504.svg" />
+          </span>
+          <div class="menu">
+            <form class="search">
+              <input id="filter"
+                     type="text"
+                     class="input"
+                     placeholder="Filter"
+                     data-bind="value: query, valueUpdate: 'keyup'">
+            </form>
+            <ul data-bind="foreach: filteredPlaces" class="list">
+              <li class="name" data-bind="text:name, click: $parent.setMarker"></li>
+            </ul>
+          </div>
         </div>
-        <div class="menu">
-          <form class="search">
-            <input id="filter"
-                   type="text"
-                   class="input"
-                   placeholder="Filter"
-                   data-bind="value: query, valueUpdate: 'keyup'">
-          </form>
-          <ul data-bind="foreach: filteredPlaces" class="list">
-            <li class="name" data-bind="text:name, click: $parent.setMarker"></li>
-          </ul>
+        <div class="nav-btn">
+          <button class="toggle-btn"><img class="btn-img" src="./client/img/noun_27504.svg" /></button>
         </div>
       </main>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>

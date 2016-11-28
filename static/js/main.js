@@ -194,12 +194,8 @@
     /**
      *  Populates the content for the info window.
      *
-     *  @param marker      [@TODO] [REQUIRED]
-     *  @param infoWindow  [@TODO] [REQUIRED]
-     *  @TODO: add click event so when user clicks outside
-     *         of infowindow the window closes
-     *  @TODO: when user clicks marker, make the map center
-     *         on the marker's location
+     *  @param marker      [OBJECT] [REQUIRED]
+     *  @param infoWindow  [OBJECT] [REQUIRED]
      */
     self.populateInfoWindow = function (marker, infoWindow) {
       if (infoWindow.marker !== marker) {
@@ -293,6 +289,15 @@
     document.getElementsByTagName('head')[0].appendChild(script);
     script.src = src;
   }
+
+  /**
+   *  Activates the side nav when button is clicked
+   *
+   *  @TODO close side navigation when clicking outside of the element
+   */
+  $(".toggle-btn").click(function () {
+    $(".nav").toggle();
+  });
 
   // load the google maps api, then initialize the app by calling initMap
   loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBiYI5uANWSAg6Uzfv1BZuZCcGiSGMh-7Q&callback=initMap', function () {

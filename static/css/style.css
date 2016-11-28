@@ -20,16 +20,18 @@ html, body {
 .heading-img {
   width: 18em; }
 
-.menu {
+.nav {
   width: 18.825rem;
-  position: absolute;
+  position: fixed;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   top: 0em;
   left: 0em;
   padding-top: 13em;
   background-color: #48b5e9;
-  z-index: 2; }
+  z-index: 2;
+  box-shadow: 0rem 0rem 2rem 0rem rgba(0, 0, 0, 0.5);
+  transition: 0.5s; }
 
 .search {
   padding-top: 1em;
@@ -82,5 +84,21 @@ html, body {
   padding-left: 2.5%; }
 
 @media only screen and (max-width: 970px) {
-  .heading, .nav, .menu {
-    display: none; } }
+  .nav {
+    display: none; }
+  .nav-btn {
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
+    z-index: 4; }
+  .toggle-btn {
+    color: #fff;
+    height: 8rem;
+    width: 8rem;
+    background-color: #48b5e9;
+    border: none;
+    border-radius: 100%;
+    box-shadow: 0.125rem 0.125rem 0.5rem 0rem rgba(0, 0, 0, 0.5);
+    cursor: pointer; }
+  .btn-img {
+    width: 80%; } }
