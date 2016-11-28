@@ -34,13 +34,12 @@ html, body {
   transition: 0.5s; }
 
 .search {
-  padding-top: 1em;
-  padding-left: 1em; }
+  padding: 1em 0em 1em 1em; }
 
 .input {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+  -moz-border-radius: 0.125em;
+  -webkit-border-radius: 0.125em;
+  border-radius: 0.125em;
   background: #fefefe;
   border: 2px solid #fff;
   height: 1.5em;
@@ -53,17 +52,20 @@ html, body {
   font-size: 1rem; }
 
 .list {
-  padding-left: 1.125em;
-  list-style: none; }
+  list-style: none;
+  margin: 0;
+  padding: 0; }
 
 .name {
+  padding: 1em 0em 1em 1em;
   font-size: 1.15em;
   color: #fff;
   line-height: 2em; }
 
 .name:hover {
-  color: #d8d8d8;
-  text-decoration: underline; }
+  color: #48b5e9;
+  background-size: 50em;
+  background-color: #fff; }
 
 .iw-container {
   width: auto; }
