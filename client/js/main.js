@@ -320,5 +320,7 @@ $(".toggle-btn").click(function() {
 
 // load the google maps api, then initialize the app by calling initMap
 loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBiYI5uANWSAg6Uzfv1BZuZCcGiSGMh-7Q&callback=initMap',
-            function(){console.log('google-loader has been loaded, but not the maps-API ');});
+            function(){
+
+            });
 })();
