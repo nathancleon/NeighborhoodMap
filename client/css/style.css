@@ -9,11 +9,11 @@ html, body {
 #map {
   width: 100%;
   height: 100%;
-  overflow: hidden;;
+  overflow: hidden;
 }
 
 .heading {
-  height: 15rem;
+  height: 8rem;
   position: absolute;
   overflow: hidden;
   top: -1.25rem;
@@ -21,8 +21,9 @@ html, body {
 }
 
 .heading-img {
-  margin-left: 5%;
-  width: 16rem;
+  padding-top: 0.5rem;
+  padding-left: 4.5rem;
+  width: 8rem;
 }
 
 .nav {
@@ -34,7 +35,7 @@ html, body {
   max-height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding-top: 13rem;
+  padding-top: 6rem;
   background-color: #48b5e9;
   z-index: 2;
   box-shadow: 0rem 0rem 2rem 0rem rgba(0, 0, 0, .5);
@@ -110,9 +111,12 @@ html, body {
 
   .heading {
     top: -1rem;
-    margin-left: -10%;
     width: 100%;
     height: 14rem;
+  }
+
+  .heading-img {
+    padding-left: 3.25rem;
   }
 
   .search {
@@ -131,6 +135,12 @@ html, body {
     line-height: 2rem;
   }
 
+  /*
+    @TODO:
+    Change nav btn size to 35x35 px
+    Update css to use knockoutjs for toggle
+  */
+
   .nav-btn {
     position: fixed;
     bottom: 2.825%;
@@ -148,6 +158,6 @@ html, body {
     cursor: pointer;
   }
   .btn-img {
-    width: 75%;
+    width: 80%;
   }
 }

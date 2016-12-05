@@ -162,9 +162,10 @@
         largeInfoWindow.close();
       });
 
-      // make map markers
+      // creates marker for each location in array
+      // Reference linked below:
+      // https://developers.google.com/maps/documentation/javascript/markers
       for (i = 0; i < self.locationList().length; i++) {
-        // @TODO: Link to documentation for Marker
         marker = new google.maps.Marker({
           map: map,
           position: self.locationList()[i].latlng,
@@ -265,8 +266,6 @@
             marker.setAnimation(null);
         } else {
           // animate the bounce for one second, then stop
-          // @TODO: Investigate possibility of ending animation
-          // based on animation events, rather than time.
           marker.setAnimation(google.maps.Animation.BOUNCE);
           setTimeout (function () {
             marker.setAnimation(null);
@@ -313,7 +312,17 @@ function loadScript (src, callback) {
  *  Activates the side nav when button is clicked
  *
  *  @TODO close side navigation when clicking outside of the element
+ *  use knockoutjs to activate toggle feature in css
  */
+
+/**
+  navClosed = !navClosed;
+
+  <div data-bind="css: { nav-close: navClosed }">
+     Profit Information
+  </div>
+**/
+
 $(".toggle-btn").click(function() {
   $(".nav").toggle();
 });
